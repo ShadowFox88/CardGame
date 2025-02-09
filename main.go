@@ -86,15 +86,17 @@ func main() {
 	} else if len(player_1.Deck.Cards) > len(player_2.Deck.Cards) {
 		fmt.Println(player_1.Username, "won the game!")
 		fmt.Printf("Their Cards:")
-		for _, card := range player_1.Deck.Cards {
+		for _, card := range player_1.Deck.Cards[:len(player_1.Deck.Cards)-1] {
 			fmt.Printf(" %s,", card.toString())
 		}
+		fmt.Printf(" %s", player_1.Deck.Cards[len(player_1.Deck.Cards)-1].toString())
 	} else {
 		fmt.Println(player_2.Username, "won the game!")
 		fmt.Printf("Their Cards:")
-		for _, card := range player_1.Deck.Cards {
+		for _, card := range player_1.Deck.Cards[:len(player_2.Deck.Cards)-1] {
 			fmt.Printf(" %s", card.toString())
 		}
+		fmt.Printf(" %s", player_2.Deck.Cards[len(player_2.Deck.Cards)-1].toString())
 	}
 	fmt.Println()
 
@@ -121,4 +123,8 @@ func main() {
 	}
 
 	WritePlayers(previousWinners)
+
+	// Note: The task given gave no indication whether we update old scores or not, so I'm assuming we don't
+	// If two people, Test1 and Test2 play this game twice, we would have 4 entries of Test1, Test1, Test2, Test2
+	// (Ordered by score) instead of 2 entries of Test1, Test2
 }
