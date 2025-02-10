@@ -12,3 +12,4 @@ func authenticate(password string) bool {
 	return err == nil
 }
 
+

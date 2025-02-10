@@ -19,28 +19,32 @@ func main() {
 	fmt.Scanln(&p1)
 
 	if !authenticate(p1) {
-		panic("Incorrect Password")
+		fmt.Println("Incorrect Password")
+		return
 	}
 
 	fmt.Println("Player 1, Please Enter Your Username:")
 	fmt.Scanln(&u1)
 
-	if len(u1) == 0 {
-		panic("Username cannot be empty")
+	if !ValidUsername(u1) {
+		fmt.Println("Invalid Username")
+		return
 	}
 
 	fmt.Println("Player 2, Please Enter The Password:")
 	fmt.Scanln(&p2)
 
 	if !authenticate(p2) {
-		panic("Incorrect Password")
+		fmt.Println("Incorrect Password")
+		return
 	}
 
 	fmt.Println("Player 2, Please Enter Your Username:")
 	fmt.Scanln(&u2)
 
-	if len(u2) == 0 {
-		panic("Username cannot be empty")
+	if !ValidUsername(u2) {
+		fmt.Println("Invalid Username")
+		return
 	}
 
 	player_1 = Player{u1, Deck{}}
