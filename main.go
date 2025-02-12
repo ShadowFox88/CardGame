@@ -53,7 +53,6 @@ func main() {
 	fmt.Println()
 
 	main_deck.Init()
-
 	for {
 		if len(main_deck.Cards) == 0 {
 			break // I know you once told me off for this, saying this was bad practice and lazy, but golang doesn't have while loops
@@ -97,8 +96,8 @@ func main() {
 	} else {
 		fmt.Println(player_2.Username, "won the game!")
 		fmt.Printf("Their Cards:")
-		for _, card := range player_1.Deck.Cards[:len(player_2.Deck.Cards)-1] {
-			fmt.Printf(" %s", card.toString())
+		for _, card := range player_2.Deck.Cards[:len(player_2.Deck.Cards)-1] {
+			fmt.Printf(" %s,", card.toString())
 		}
 		fmt.Printf(" %s", player_2.Deck.Cards[len(player_2.Deck.Cards)-1].toString())
 	}

@@ -1,13 +1,13 @@
 package main
 
 type Player struct {
-	Username string `json:"username"`
-	Deck Deck `json:"deck"`
+	Username string
+	Deck Deck
 }
 
 type PlayerStore struct {
-	Username string `json:"username"`
-	Score int `json:"score"`
+	Username string
+	Score int
 }
 
 func ValidUsername(username string) bool {
