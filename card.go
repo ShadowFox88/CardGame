@@ -6,7 +6,7 @@ import (
 
 type Card struct {
 	Colour string
-	Value int
+	Value  int
 }
 
 func (c *Card) toString() string {
@@ -22,12 +22,11 @@ func BestCard(card1 Card, card2 Card) Card {
 		}
 	}
 
-	if (card1.Colour == "Red" && card2.Colour == "Black") ||  // Red Wins
-	   (card1.Colour == "Yellow" && card2.Colour == "Red") ||  // Yellow Wins
-	   (card1.Colour == "Black" && card2.Colour == "Yellow") { // Black Wins
+	if (card1.Colour == "Red" && card2.Colour == "Black") || // Red Wins
+		(card1.Colour == "Yellow" && card2.Colour == "Red") || // Yellow Wins
+		(card1.Colour == "Black" && card2.Colour == "Yellow") { // Black Wins
 		return card1
 	}
 
 	return card2
 }
-

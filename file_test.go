@@ -1,9 +1,9 @@
 package main
 
 import (
-	"testing"
-	"reflect"
 	"os"
+	"reflect"
+	"testing"
 )
 
 func TestPlayersBinaryConversion(t *testing.T) {

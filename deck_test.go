@@ -14,21 +14,21 @@ func TestDeckCreate(t *testing.T) {
 		t.Errorf("Expected deck length of 30, but got %d", len(deck.Cards))
 	}
 
-		// Check if all colors and numbers are present
-		colorCount := make(map[string]int)
-		numberCount := make(map[int]int)
-	
-		for _, card := range deck.Cards {
-			colorCount[card.Colour]++
-			numberCount[card.Value]++
-		}
-	
-		if len(colorCount) != 3 {
-			t.Error("Not all colors are present in deck")
-		}
-		if len(numberCount) != 10 {
-			t.Error("Not all numbers are present in deck")
-	}	
+	// Check if all colors and numbers are present
+	colorCount := make(map[string]int)
+	numberCount := make(map[int]int)
+
+	for _, card := range deck.Cards {
+		colorCount[card.Colour]++
+		numberCount[card.Value]++
+	}
+
+	if len(colorCount) != 3 {
+		t.Error("Not all colors are present in deck")
+	}
+	if len(numberCount) != 10 {
+		t.Error("Not all numbers are present in deck")
+	}
 }
 
 func TestDeckInit(t *testing.T) {
@@ -69,7 +69,7 @@ func TestDeckInit(t *testing.T) {
 func TestDeckDraw(t *testing.T) {
 	deck := Deck{}
 	deck.Init()
-	
+
 	initialLength := len(deck.Cards)
 	drawnCard := deck.Draw()
 
@@ -82,7 +82,7 @@ func TestDeckDraw(t *testing.T) {
 	if drawnCard.Value < 1 || drawnCard.Value > 10 {
 		t.Error("Drawn card has invalid number")
 	}
-	
+
 	validColors := map[string]bool{"Red": true, "Yellow": true, "Black": true}
 	if !validColors[drawnCard.Colour] {
 		t.Error("Drawn card has invalid color")

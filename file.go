@@ -1,15 +1,15 @@
 package main
 
 import (
-	"os"
 	"bytes"
 	"encoding/gob"
 	"errors"
+	"os"
 )
 
 func playersToBinary(players []PlayerStore) ([]byte, error) {
 	var buffer bytes.Buffer
-	
+
 	encoder := gob.NewEncoder(&buffer)
 	err := encoder.Encode(players)
 

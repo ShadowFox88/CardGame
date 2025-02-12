@@ -25,7 +25,7 @@ func (d *Deck) createCards() {
 }
 
 func (d *Deck) shuffle() {
-    rand.Shuffle(len(d.Cards), func(i, j int) {
+	rand.Shuffle(len(d.Cards), func(i, j int) {
 		d.Cards[i], d.Cards[j] = d.Cards[j], d.Cards[i]
 	})
 }

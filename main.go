@@ -10,10 +10,8 @@ var player_2 Player
 
 var main_deck Deck = Deck{}
 
-
-
 func main() {
-	var p1,p2,u1,u2 string
+	var p1, p2, u1, u2 string
 
 	fmt.Println("Player 1, Please Enter The Password:")
 	fmt.Scanln(&p1)
@@ -62,7 +60,7 @@ func main() {
 
 		fmt.Printf("%s's Turn, Press Enter to Draw", player_1.Username)
 		fmt.Scanln()
-		
+
 		player_1_card := main_deck.Draw()
 		fmt.Printf("%s drew %s \n\n", player_1.Username, player_1_card.toString())
 

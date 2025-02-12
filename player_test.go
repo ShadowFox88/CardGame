@@ -11,19 +11,19 @@ func TestPlayer(t *testing.T) {
 		want     bool
 	}{
 		{
-			name: "Test Valid Username",
+			name:     "Test Valid Username",
 			username: "John",
-			want: true,
+			want:     true,
 		},
 		{
-			name: "Test Invalid Username",
+			name:     "Test Invalid Username",
 			username: "123456789123456",
-			want: false,
+			want:     false,
 		},
 		{
-			name: "Test Empty Username",
+			name:     "Test Empty Username",
 			username: "",
-			want: false,
+			want:     false,
 		},
 	}
 

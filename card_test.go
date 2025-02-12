@@ -19,7 +19,7 @@ func TestBestCard(t *testing.T) {
 		},
 		{
 			name:     "Same color, card2 higher",
-			card1:    Card{Colour: "Yellow", Value: 2}, 
+			card1:    Card{Colour: "Yellow", Value: 2},
 			card2:    Card{Colour: "Yellow", Value: 4},
 			expected: Card{Colour: "Yellow", Value: 4},
 		},
@@ -32,7 +32,7 @@ func TestBestCard(t *testing.T) {
 		{
 			name:     "Yellow beats Red",
 			card1:    Card{Colour: "Yellow", Value: 2},
-			card2:    Card{Colour: "Red", Value: 8}, 
+			card2:    Card{Colour: "Red", Value: 8},
 			expected: Card{Colour: "Yellow", Value: 2},
 		},
 		{

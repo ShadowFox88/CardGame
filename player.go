@@ -2,12 +2,12 @@ package main
 
 type Player struct {
 	Username string
-	Deck Deck
+	Deck     Deck
 }
 
 type PlayerStore struct {
 	Username string
-	Score int
+	Score    int
 }
 
 func ValidUsername(username string) bool {
